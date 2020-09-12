@@ -1,53 +1,58 @@
 .container {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(13, 1fr);
-    gap: 15px;
-    grid-template-areas:
-      "header header header header"
-      "header header header header"
-      "header header header header"
-      "Small-Box-1 Small-Box-2 Small-Box-3 Sidebar"
-      "Small-Box-1 Small-Box-2 Small-Box-3 Sidebar"
-      "Small-Box-1 Small-Box-2 Small-Box-3 Sidebar"
-      "Small-Box-1 Small-Box-2 Small-Box-3 Sidebar"
-      "Small-Box-1 Small-Box-2 Small-Box-3 Sidebar"
-      "Main-Content Main-Content Main-Content Sidebar"
-      "Main-Content Main-Content Main-Content Sidebar"
-      "Main-Content Main-Content Main-Content Sidebar"
-      "Footer Footer Footer Footer"
-      "Footer Footer Footer Footer";
-  }
-
-  #item1 {
-    grid-area: header;    
-  }
-  #item2 {
-    grid-area: Small-Box-1;
-  }
-  #item3 {
-    grid-area: Small-Box-2;
-  }
-  #item4 {
-    grid-area: Small-Box-3;
-  }
-  #item5 {
-    grid-area: Sidebar;
-  }
-  #item6 {
-    grid-area: Main-Content;
-  }
-  #item7 {
-    grid-area: Footer;
-  }
-  .item {
-    height: 100%;
+  font-family:sans-serif;
+  margin:0 auto;
+  color:rgb(255, 255, 255);
+  padding:20px; /* biraz açalım doğru düzgün gözüksün */
+  width:1000px;
+  height:100vh;   /* 1000px aynı gibi */
+  text-transform:capitalize;
+  
+  display:grid;
+  grid-gap:20px;  /* kutular arası boşluk vermek için kullanılır*/
+  /* grid-row-gap: 5px;
+  grid-column-gap: 10px ;
+  yukardaki ile aynı sonucu verir
+  grid-gap: 5px 10px; */
+  
+  grid-template-rows:1fr 2fr 4fr 1fr ;
+  grid-template-columns:repeat(4,1fr); 
+    /* üstteki kod ile aynı:
+   grid-template: 1fr 2fr 4fr 1fr / repeat(4,1fr) ; */
+}
+.container > * {
     
-    background-color: rgb(0, 102, 204);
-    display: flex;
-    color: white;
-    padding-left: 20px;
-    padding-top:  ;
-    font-size: 14pt;    
+    background-color:royalblue;
+    padding:20px;
+    font-size:20px;
   }
+  
+.header{
+  /* grid-area:1/1/2/-1; */
+
+  /* grid-row: 1 / 2;
+  grid-column: 1 / -1 ; */
+  
+  
+  grid-row-start:1 ; 
+  /* (satırdaki ikinci çizgi) */
+  grid-row-end: 2; 
+  /* (satırdaki üçüncü çizgi) */
+  grid-column-start:1 ; 
+  /* (satırdaki üçüncü çizgi) */
+  grid-column-end: -1; 
+  /* (sütundaki üçüncü çizgi) */
+  
+
+}
+.sidebar{
+  grid-area:2/4/4/5
+
+}
+
+.main{
+  grid-area:3/1/4/4;
+}
+
+.footer{
+  grid-area:4/1/5/-1;
+}
