@@ -1,5 +1,7 @@
 # Coding Challenge - 002 : CSS Grid
 
+link : https://talha-35.github.io/Coding-Challenge---002-CSS-Blog/
+
 Purpose of the this coding challenge is to write a code that make a CSS Grid.
 
 ## Learning Outcomes
